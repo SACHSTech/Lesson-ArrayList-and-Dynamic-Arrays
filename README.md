@@ -1,24 +1,120 @@
-# ICS3U Base Template for Java Programming
-This repository is a starter for ICS3U assignments. 
+# Introduction to ArrayList (Dynamic Arrays)
 
-For a guide on using GitHub with Visual Studio Code, click [here](https://github.com/SACHSTech/Using-GitHub).
+In this lesson, we extend the ideas learned with regular arrays by introducing a new data structure: the ArrayList. Students should come away understanding not only how to use ArrayList, but also when it is the better choice and how it compares to the fixed arrays they already know.
 
-## Includes
-- ConsoleProgram setup for CodeHS-style helper input/output methods
-- Processing starter code (`Sketch.java`)
-- VS Code launch configurations for running console and graphics programs
+This is a lightweight introduction intended only to give students the practical toolkit they need in future projects, including CPT game development where objects will frequently be created, removed, or resized dynamically.
 
-## Getting Started
-1. Clone this repo in VS Code.
-2. Open the `src` folder.
-3. Edit `Main.java` (or create new files that extend `ConsoleProgram`) for text-based programs.
-4. Edit `Sketch.java` to write programs with Processing graphics.
+## Learning Goals
+By the end of this lesson, you should be able to:
+- Explain the difference between a fixed-size array and a dynamic ArrayList.
+- Create, modify, and retrieve values from an ArrayList.
+- Recognize common patterns (adding, removing, iterating).
+- Compare arrays and ArrayLists using a direct side-by-side reference.
+- Understand why ArrayList exists and when it is the correct data structure to use.
 
-## Running Your Programs
-Use the **Run and Debug panel** (on the left sidebar) to launch programs.  
-   - Select **Launch Console Program** when running text-based programs (e.g., `Main.java`, `MyProgram.java`, etc.).  
-   ![screenshot](.media/01.png)
+## 1. Why Not Always Use Arrays?
+A regular array has two main limitations:
+1. The size must be known in advance.
+2. The size cannot change afterwards.
 
-   - Select **Launch Processing Sketch** when running graphics assignments (`Sketch.java`).  
-   ![screenshot](.media/02.png)
-   - Avoid using the Play ▶ button in the editor toolbar (see top-right corner). It always repeats the previous successful launch config and may run the wrong one.
+This works well for situations like:
+- Storing the test scores of exactly 30 students.
+- Keeping track of the days of the week.
+- A fixed set of sensor readings.
+
+But it breaks down when:
+- New items appear unpredictably.
+- Items disappear or get removed.
+- The number of items changes constantly.
+
+### Dynamic Problems Require Dynamic Structures
+In a CPT-style arcade game, for example:
+- Enemies spawn at random intervals.
+- Projectiles appear when fired and disappear on collision.
+- The number of objects changes every frame.
+
+A fixed array is a bad fit here because you would constantly be trying to track “empty slots” or resizing manually. The ArrayList solves this problem by growing and shrinking automatically.
+
+## 2. What Is an ArrayList?
+An ArrayList is a resizable array. It stores elements in order, just like a regular array, but it can add or remove elements at any time.
+
+To use ArrayList, you must import it:
+
+import java.util.ArrayList;
+
+Then you can create one:
+
+ArrayList<String> names = new ArrayList<>();
+
+The angle brackets <String> tell Java what type the list holds.
+
+## 3. Basic Operations
+
+### Add an item
+names.add("Ana");
+
+### Get an item
+String s = names.get(0);
+
+### Change an item
+names.set(1, "Lila");
+
+### Remove an item
+names.remove(0);
+
+### Size
+int count = names.size();
+
+## 4. Iterating Through an ArrayList
+
+### Regular index loop
+for (int i = 0; i < names.size(); i++) {
+    System.out.println(names.get(i));
+}
+
+### Enhanced for loop
+for (String n : names) {
+    System.out.println(n);
+}
+
+## 5. Arrays vs ArrayList — Side-by-Side Reference
+
+### Creating
+Array:
+int[] nums = new int[5];
+
+ArrayList:
+ArrayList<Integer> nums = new ArrayList<>();
+
+### Accessing length/size
+Array: nums.length  
+ArrayList: nums.size()
+
+### Getting/setting values
+Array:
+nums[2] = 10;
+
+ArrayList:
+nums.set(2, 10);
+
+### Adding/removing
+Arrays cannot resize.  
+ArrayList can add and remove freely.
+
+## 6. Behind the Scenes (Optional)
+An ArrayList is built on top of a regular array. When it runs out of space, it automatically:
+- allocates a larger array
+- copies everything over
+
+## 7. Practical Examples
+Tracking enemies, storing shapes, logging inputs.
+
+## 8. Common Mistakes
+- Using [] with ArrayList
+- Forgetting <Type>
+- Using .length instead of .size()
+- Removing while looping forward
+
+## 9. Summary
+Arrays are simple and fixed.  
+ArrayLists are flexible and dynamic. Students will use both depending on the problem.
