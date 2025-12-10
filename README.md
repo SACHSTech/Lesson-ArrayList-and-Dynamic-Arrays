@@ -1,8 +1,8 @@
-# Introduction to ArrayList (Dynamic Arrays)
+# Introduction to ArrayList and Dynamic Arrays
 
-In this lesson, we extend the ideas learned with regular arrays by introducing a new data structure: the ArrayList. Students should come away understanding not only how to use ArrayList, but also when it is the better choice and how it compares to the fixed arrays they already know.
+In this lesson, we extend the ideas learned with regular arrays by introducing a new data structure: the ArrayList. 
 
-This is a lightweight introduction intended only to give students the practical toolkit they need in future projects, including CPT game development where objects will frequently be created, removed, or resized dynamically.
+This is a lightweight introduction intended only to give you a practical toolkit useful for future projects, including CPT game development where objects will frequently be created, removed, or resized dynamically.
 
 ## Learning Goals
 By the end of this lesson, you should be able to:
@@ -115,6 +115,8 @@ Tracking enemies, storing shapes, logging inputs.
 - Using .length instead of .size()
 - Removing while looping forward
 
-## 9. Summary
-Arrays are simple and fixed.  
-ArrayLists are flexible and dynamic. Students will use both depending on the problem.
+
+
+
+# Practice Problems
+Annotated solutions to these problems can be found [here](SOLUTIONS.md).
