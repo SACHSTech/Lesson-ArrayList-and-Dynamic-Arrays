@@ -8,6 +8,7 @@ Up to this point, we have only worked with regular arrays, which are extremely u
 
 Think ahead to your CPT project, especially if you build a game: enemies spawn and disappear, projectiles get created and destroyed, inventories grow and shrink. Trying to manage this with a fixed array forces you to track empty slots, shift elements manually, or build new arrays constantly. ArrayList exists to solve exactly this problem. It behaves like a **resizable array** and gives you simple tools for adding, removing, and inserting elements without worrying about capacity. 
 
+<br>
 
 ## 1. Importing ArrayList
 
@@ -20,6 +21,8 @@ import java.util.ArrayList;
 ```
 
 Some IDEs like Visual Studio Code will automatically add the import line as soon as you write a line of code requiring it.
+
+<br>
 
 ## 2. Creating an ArrayList
 Using `ArrayList` requires a new syntax using angle brackets. The angle brackets tell Java what data type the `ArrayList` will store.
@@ -51,6 +54,8 @@ Note: `Integer` is an object wrapper for `int`. `ArrayList` can only store objec
 - `boolean` becomes `Boolean`
 
 You don’t need to do anything special — just use the wrapper type in the angle brackets, and Java will let you store values normally.
+
+<br>
 
 ## 3. Basic Operations
 This is a curated set of operations that will be helpful when you begin working with ArrayLists. Each example includes a simple before/after visualization.
@@ -123,7 +128,7 @@ int count = list.size();
 `count` becomes `3`
 
 
-
+<br>
 
 ## 4. Looping Through an ArrayList
 Use similar techniques as regular arrays to traverse and loop through the array:
@@ -142,6 +147,8 @@ for (String s : list) {
 }
 ```
 
+<br>
+
 ## 5. Arrays vs. ArrayList Comparison Table
 This is a helpful table that compares common array operations for a standard array named `arr` and a dynamic `ArrayList` named `list`:
 
@@ -155,6 +162,8 @@ Fixed or dynamic size | Fixed size | Changes size automatically
 Extra helper methods | None | Many (`add`, `remove`, `isEmpty`, etc.)
 Data types allowed | Primitives (`int`, `double`, etc.) or objects (`String`) | Objects only, use wrappers (e.g. `Integer`, `Double`, `String`)
 
+<br>
+
 ## 6. Why Choose ArrayList?
 
 Use a regular array when:
@@ -166,6 +175,8 @@ Use ArrayList when:
 - The list must grow or shrink at runtime.
 - Items appear and disappear unpredictably.
 - You want convenience methods like add, remove, etc.
+
+<br>
 
 ## 7. Common Mistakes
 
@@ -181,7 +192,6 @@ Arrays use `length`. ArrayLists use `size()`.
 
 4. Removing while looping forward  
 This can skip elements. Loop backward if removing.
-
 
 <br>
 
