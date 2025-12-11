@@ -1,122 +1,93 @@
-# Introduction to ArrayList and Dynamic Arrays
+# Introduction to ArrayList (Dynamic Arrays)
 
-In this lesson, we extend the ideas learned with regular arrays by introducing a new data structure: the ArrayList. 
+This lesson introduces the ArrayList class in Java in a way that directly parallels your understanding of regular arrays. The goal is to give you enough practical knowledge to use dynamic lists in projects, especially CPT games where objects appear and disappear frequently.
 
-This is a lightweight introduction intended only to give you a practical toolkit useful for future projects, including CPT game development where objects will frequently be created, removed, or resized dynamically.
+## 1. Importing ArrayList
+Before using ArrayList, you must import it:
 
-## Learning Goals
-By the end of this lesson, you should be able to:
-- Explain the difference between a fixed-size array and a dynamic ArrayList.
-- Create, modify, and retrieve values from an ArrayList.
-- Recognize common patterns (adding, removing, iterating).
-- Compare arrays and ArrayLists using a direct side-by-side reference.
-- Understand why ArrayList exists and when it is the correct data structure to use.
+import java.util.*;
 
-## 1. Why Not Always Use Arrays?
-A regular array has two main limitations:
-1. The size must be known in advance.
-2. The size cannot change afterwards.
+## 2. Creating an ArrayList
 
-This works well for situations like:
-- Storing the test scores of exactly 30 students.
-- Keeping track of the days of the week.
-- A fixed set of sensor readings.
+### Empty ArrayList of Strings
+ArrayList<String> list = new ArrayList<String>();
 
-But it breaks down when:
-- New items appear unpredictably.
-- Items disappear or get removed.
-- The number of items changes constantly.
+### Empty ArrayList of Integers
+ArrayList<Integer> nums = new ArrayList<Integer>();
 
-### Dynamic Problems Require Dynamic Structures
-In a CPT-style arcade game, for example:
-- Enemies spawn at random intervals.
-- Projectiles appear when fired and disappear on collision.
-- The number of objects changes every frame.
-
-A fixed array is a bad fit here because you would constantly be trying to track “empty slots” or resizing manually. The ArrayList solves this problem by growing and shrinking automatically.
-
-## 2. What Is an ArrayList?
-An ArrayList is a resizable array. It stores elements in order, just like a regular array, but it can add or remove elements at any time.
-
-To use ArrayList, you must import it:
-
-import java.util.ArrayList;
-
-Then you can create one:
-
-ArrayList<String> names = new ArrayList<>();
-
-The angle brackets <String> tell Java what type the list holds.
+Note: Integer is the object wrapper for int. ArrayList cannot store primitive types directly, but Java automatically converts between int and Integer when needed.
 
 ## 3. Basic Operations
 
-### Add an item
-names.add("Ana");
+### Add a value to the end
+list.add("Ana");
+nums.add(5);
 
-### Get an item
-String s = names.get(0);
+### Insert at an index (shifts elements to the right)
+list.add(1, "Inserted");
 
-### Change an item
-names.set(1, "Lila");
+### Get a value
+String name = list.get(0);
 
-### Remove an item
-names.remove(0);
+### Set or replace a value
+list.set(0, "Updated");
 
-### Size
-int count = names.size();
+### Remove by index
+list.remove(2);
 
-## 4. Iterating Through an ArrayList
+### Get the size
+int count = list.size();
 
-### Regular index loop
-for (int i = 0; i < names.size(); i++) {
-    System.out.println(names.get(i));
+## 4. Looping Through an ArrayList
+
+### Index loop
+for (int i = 0; i < list.size(); i++) {
+    System.out.println(list.get(i));
 }
 
-### Enhanced for loop
-for (String n : names) {
-    System.out.println(n);
+### Enhanced for-each loop
+for (String s : list) {
+    System.out.println(s);
 }
 
-## 5. Arrays vs ArrayList — Side-by-Side Reference
+## 5. Arrays vs. ArrayList Comparison Table
 
-### Creating
-Array:
-int[] nums = new int[5];
+Feature | array | ArrayList
+--- | --- | ---
+Get size or length | arr.length | list.size()
+Set value at index | arr[i] = x | list.set(i, x)
+Get value at index | arr[i] | list.get(i)
+Create | int[] arr = new int[5] | ArrayList<Integer> list = new ArrayList<Integer>()
+Fixed or dynamic size | Fixed size | Changes size automatically
+Extra helper methods | None | Many (add, remove, clear, isEmpty)
+Types allowed | Primitives or objects | Objects only, supports autoboxing
 
-ArrayList:
-ArrayList<Integer> nums = new ArrayList<>();
+## 6. Why Choose ArrayList?
+Use a regular array when:
+- The number of items is fixed.
+- Performance and simplicity matter more than flexibility.
 
-### Accessing length/size
-Array: nums.length  
-ArrayList: nums.size()
+Use ArrayList when:
+- The list must grow or shrink.
+- Items appear or disappear unpredictably.
+- You want convenience methods like add and remove.
 
-### Getting/setting values
-Array:
-nums[2] = 10;
+Game example: Enemy objects spawn and get removed constantly, making ArrayList the natural structure.
 
-ArrayList:
-nums.set(2, 10);
+## 7. Common Mistakes
 
-### Adding/removing
-Arrays cannot resize.  
-ArrayList can add and remove freely.
+1. Trying to use [] with ArrayList  
+Incorrect: list[0] = "Bob";  
+Correct: list.set(0, "Bob");
 
-## 6. Behind the Scenes (Optional)
-An ArrayList is built on top of a regular array. When it runs out of space, it automatically:
-- allocates a larger array
-- copies everything over
+2. Forgetting the type parameter  
+ArrayList requires a type inside angle brackets.
 
-## 7. Practical Examples
-Tracking enemies, storing shapes, logging inputs.
+3. Using .length instead of .size()  
+Arrays use length. ArrayLists use size().
 
-## 8. Common Mistakes
-- Using [] with ArrayList
-- Forgetting <Type>
-- Using .length instead of .size()
-- Removing while looping forward
+4. Removing inside a forward loop  
+Removing while looping upward can skip elements. Loop backward if removing.
 
-
-
-
-# Practice Problems
-Annotated solutions to these problems can be found [here](SOLUTIONS.md).
+## 8. Summary
+You can now create, update, remove, and loop through ArrayLists. You understand how they differ from arrays, when to use each structure, and how to choose the right tool for the CPT and future programming assignments.
