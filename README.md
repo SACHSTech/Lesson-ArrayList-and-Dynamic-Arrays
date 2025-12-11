@@ -1,4 +1,4 @@
-# Introduction to ArrayList (Dynamic Arrays)
+# Introduction to ArrayList and Dynamic Arrays
 
 This lesson introduces the ArrayList class in Java in a way that directly parallels your understanding of regular arrays. The goal is to give you enough practical knowledge to use dynamic lists in projects, especially CPT games where objects appear and disappear frequently.
 
@@ -182,3 +182,300 @@ Arrays use `length`. ArrayLists use `size()`.
 4. Removing while looping forward  
 This can skip elements. Loop backward if removing.
 
+
+<br>
+
+# Practice Problems - ArrayList
+
+A set of 10 problems designed to introduce ArrayList operations gradually. Earlier problems reinforce basic syntax, while later problems mix logic, traversal, and refactoring.
+
+## Problem 1 — Create and Print a Simple ArrayList
+Create an `ArrayList<String>` containing the names `"Ava"`, `"Liam"`, and `"Zoe"`.  
+Print each element on its own line using a loop.
+
+Expected Output:
+```
+Ava
+Liam
+Zoe
+```
+<br>
+
+## Problem 2 — Add and Remove Elements
+Start with the list:
+```java
+ArrayList<String> items = new ArrayList<String>();
+items.add("Pen");
+items.add("Pencil");
+items.add("Eraser");
+```
+
+Add `"Marker"` to the end, then remove `"Pencil"`.  
+Print the final list using a loop.
+
+Expected Output:
+```
+Pen
+Eraser
+Marker
+```
+
+<br>
+
+## Problem 3 — Insert at a Specific Index
+Start with:
+```java
+ArrayList<String> colours = new ArrayList<String>();
+colours.add("Red");
+colours.add("Blue");
+colours.add("Yellow");
+```
+
+Insert `"Green"` at index 1.  
+Print the updated list.
+
+<br>
+
+## Problem 4 — Replace a Value
+Given:
+```java
+ArrayList<Integer> nums = new ArrayList<Integer>();
+nums.add(3);
+nums.add(8);
+nums.add(10);
+```
+
+Replace the middle value (`8`) with `20`.  
+Print the final list.
+
+<br>
+
+## Problem 5 — Count How Many Times a Value Appears
+Create an `ArrayList<String>` of the following pet names:
+`["Cat", "Dog", "Fish", "Dog", "Cat", "Dog"]`
+
+Count and print how many times `"Dog"` appears.
+
+Expected Output:
+```
+Dog appears 3 times.
+```
+
+<br>
+
+## Problem 6 — Print All Values Above a Threshold
+Given:
+```java
+ArrayList<Integer> temps = new ArrayList<Integer>();
+temps.add(12);
+temps.add(5);
+temps.add(19);
+temps.add(3);
+temps.add(17);
+```
+
+Print only the temperatures greater than 10.
+
+<br>
+
+## Problem 7 — Remove All Negative Numbers
+Start with:
+```java
+ArrayList<Integer> data = new ArrayList<Integer>();
+data.add(4);
+data.add(-3);
+data.add(9);
+data.add(-1);
+data.add(7);
+```
+
+Remove all negative numbers from the list.  
+(HINT: loop backward when removing.)
+
+Final Result:
+```
+[4, 9, 7]
+```
+
+<br>
+
+## Problem 8 — Build a List From User Input (Assume Input Provided)
+Write code that asks the user for 5 words (one at a time), stores them in an `ArrayList<String>`, then prints them in reverse order.
+
+If user types:
+```
+hello
+world
+java
+is
+fun
+```
+
+The program prints:
+```
+fun
+is
+java
+world
+hello
+```
+
+<br>
+
+## Problem 9 — Find the Largest Value
+Given:
+```java
+ArrayList<Integer> nums = new ArrayList<Integer>();
+nums.add(14);
+nums.add(2);
+nums.add(27);
+nums.add(19);
+nums.add(8);
+```
+
+Write code to find and print the largest number in the list.
+
+Expected Output:
+```
+Largest value: 27
+```
+
+<br>
+
+## Problem 10 — Refactor Array Code to Use ArrayList
+Below is code that uses a regular array to count how many values are above 50.
+
+```
+int[] scores = {65, 42, 88, 51, 33};
+int count = 0;
+
+for (int i = 0; i < scores.length; i++) {
+    if (scores[i] > 50) {
+        count++;
+    }
+}
+System.out.println(count);
+```
+
+Task: Rewrite this exact logic using an `ArrayList<Integer>` instead of an array.  
+
+Your `ArrayList` version should produce the same output.
+
+<br>
+
+## Problem 11 — Remove All Occurrences of a Word (Case-Insensitive)
+You are given:
+```java
+ArrayList<String> words = new ArrayList<String>();
+words.add("Apple");
+words.add("banana");
+words.add("APPLE");
+words.add("Cherry");
+words.add("apple");
+```
+
+Write code that removes all occurrences of "apple", ignoring case.  
+Print the final list.
+
+Expected Result:
+```
+[banana, Cherry]
+```
+
+#### HINT 1:  
+Consider converting both the list element and the word "apple" to the same case before comparing them. Use String methods such as `.toUpperCase()` or `.toLowerCase()`
+
+#### HINT 2:
+You can apply a method directly to the result of another method.
+For example, in:
+```java
+words.get(i).toUpperCase()
+```
+
+- `words.get(i)` gives you the String at index i
+- `.toUpperCase()` is then applied to that String
+
+This technique is called **method chaining**, and it lets you write expressions in a compact way.
+
+<br>
+
+## Problem 12 — Create a New Filtered List
+You are given the following numbers:
+```java
+ArrayList<Integer> nums = new ArrayList<Integer>();
+nums.add(3);
+nums.add(15);
+nums.add(8);
+nums.add(22);
+nums.add(5);
+nums.add(19);
+```
+
+Create a new ArrayList containing only the values between 10 and 20 inclusive.  
+Print the new list.
+
+<br>
+
+## Problem 13 — Rotate All Values Right by One
+Given:
+```java
+ArrayList<String> letters = new ArrayList<String>();
+letters.add("A");
+letters.add("B");
+letters.add("C");
+letters.add("D");
+```
+
+Write code that rotates all elements to the right by one position.
+
+Before:
+```
+[A, B, C, D]
+```
+
+After:
+```
+[D, A, B, C]
+```
+
+<br>
+
+## Problem 14 — Mirror the List
+Given:
+```java
+ArrayList<Integer> nums = new ArrayList<Integer>();
+nums.add(1);
+nums.add(2);
+nums.add(3);
+```
+
+Modify the list so that it becomes a mirrored version of itself:
+
+Before:
+```
+[1, 2, 3]
+```
+
+After:
+```
+[1, 2, 3, 3, 2, 1]
+```
+
+Use `add()` and `get()` only. Do not create a second list.
+
+<br>
+
+## Problem 15 — 2D ArrayList (List of Lists)
+Create a 2D ArrayList representing a seating chart:
+
+```
+Row 0 → ["Ava", "Ben"]  
+Row 1 → ["Mia", "Noah", "Zoe"]  
+Row 2 → ["Kai"]
+```
+
+Tasks:
+1. Print the entire chart in row–major order.  
+2. Add "Liam" to Row 2.  
+3. Replace "Ben" with "Ben (away)".  
+4. Print the updated chart.
