@@ -189,6 +189,8 @@ This can skip elements. Loop backward if removing.
 
 A set of 10 problems designed to introduce ArrayList operations gradually. Earlier problems reinforce basic syntax, while later problems mix logic, traversal, and refactoring.
 
+Annotated solutions to these problems can be found [here](SOLUTIONS.md).
+
 ## Problem 1 — Create and Print a Simple ArrayList
 Create an `ArrayList<String>` containing the names `"Ava"`, `"Liam"`, and `"Zoe"`.  
 Print each element on its own line using a loop.
